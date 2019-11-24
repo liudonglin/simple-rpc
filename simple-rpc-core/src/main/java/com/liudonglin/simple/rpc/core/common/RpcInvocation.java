@@ -1,6 +1,8 @@
 package com.liudonglin.simple.rpc.core.common;
 
-public class RpcInvocation {
+import java.io.Serializable;
+
+public class RpcInvocation implements Serializable {
 
     private String interfaceName;
 

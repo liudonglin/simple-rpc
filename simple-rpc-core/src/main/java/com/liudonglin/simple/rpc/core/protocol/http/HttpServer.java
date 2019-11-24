@@ -42,6 +42,7 @@ public class HttpServer {
 
         try {
             tomcat.start();
+            System.out.printf("tomcat is start at %s:%d",url.getHost(),url.getPort());
             server.await();
         } catch (LifecycleException e) {
             e.printStackTrace();
