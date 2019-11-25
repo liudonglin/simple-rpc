@@ -16,9 +16,7 @@ public class HttpServer {
         Service service = server.findService("Tomcat");
 
         Connector connector = new Connector();
-        connector.setURIEncoding("UTF-8");
         connector.setPort(url.getPort());
-        service.addConnector(connector);
 
         Engine engine = new StandardEngine();
         engine.setDefaultHost(url.getHost());
@@ -42,7 +40,7 @@ public class HttpServer {
 
         try {
             tomcat.start();
-            System.out.printf("tomcat is start at %s:%d",url.getHost(),url.getPort());
+            System.out.printf("tomcat is start at %s:%d \n",url.getHost(),url.getPort());
             server.await();
         } catch (LifecycleException e) {
             e.printStackTrace();

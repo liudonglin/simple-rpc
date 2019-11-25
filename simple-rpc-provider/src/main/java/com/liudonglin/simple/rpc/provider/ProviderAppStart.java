@@ -9,7 +9,7 @@ import com.liudonglin.simple.rpc.provider.service.GreetingServiceImpl;
 
 import java.rmi.Remote;
 
-public class AppStart {
+public class ProviderAppStart {
 
     public static void main(String[] args) {
         //注册服务

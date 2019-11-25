@@ -2,13 +2,13 @@ package com.liudonglin.simple.rpc.core.common;
 
 public class URL {
 
-    private final String protocol;
+    private String protocol;
 
-    private final String host;
+    private String host;
 
-    private final int port;
+    private int port;
 
-    private final String path;
+    private String path;
 
     protected URL() {
         this.protocol = null;
@@ -69,16 +69,31 @@ public class URL {
         return protocol;
     }
 
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
+
     public String getHost() {
         return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
     }
 
     public int getPort() {
         return port;
     }
 
+    public void setPort(int port) {
+        this.port = port;
+    }
+
     public String getPath() {
         return path;
     }
 
+    public void setPath(String path) {
+        this.path = path;
+    }
 }

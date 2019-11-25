@@ -28,7 +28,7 @@ public class RemoteMapRegister {
         try{
             String result = client.create().creatingParentsIfNeeded().withMode(CreateMode.EPHEMERAL)
                     .forPath(String.format("/dubbo/service/%s/%s",interfaceName, JSONObject.toJSONString(url)));
-            System.out.println(result);
+            System.out.printf("已将服务%s注册到zookeeper \n",interfaceName);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -42,6 +42,7 @@ public class RemoteMapRegister {
             for (String urlStr:result ) {
                 urlList.add(JSONObject.parseObject(urlStr,URL.class));
             }
+            System.out.printf("已从zookeeper获取到服务%s的地址 \n",interfaceName);
         } catch (Exception e) {
             e.printStackTrace();
         }
